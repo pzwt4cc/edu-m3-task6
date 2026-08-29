@@ -30,7 +30,6 @@ const userProfession = document.getElementById('user-profession');
 userName.textContent = userProfile.name;
 userNickname.textContent = userProfile.nickname;
 userBio.textContent = userProfile.bio;
-userDate.textContent = `Date of birth: ` + userProfile.birthDate;
 userProfession.textContent = `Profession: ` + userProfile.profession;
 
 const userSwitchLinks = document.querySelectorAll('.nav-link');
@@ -100,3 +99,9 @@ userPhone.addEventListener('mouseenter', () => {
 userPhone.addEventListener('mouseleave', () => {
   userPhone.textContent = userPhone.dataset.phone;
 });
+
+const birthYear = userProfile.birthDate.slice(-4);
+const age = new Date().getFullYear() - birthYear;
+
+userDate.textContent = `Date of birth: ${userProfile.birthDate}`;
+userDate.title = `Age: ${age}`;
