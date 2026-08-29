@@ -195,6 +195,11 @@ a {
     display: block;
   }
 
+  .user-actions {
+    display: flex;
+    justify-content: center;
+  }
+
   .user-card-name,
   .user-card-nickname {
     position: static;
