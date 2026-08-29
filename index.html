@@ -6,7 +6,7 @@
   <title>DOM User Card</title>
   <link rel="stylesheet" href="./assets/css/reset.css">
   <link rel="stylesheet" href="./assets/css/style.css">
-  <script src="./assets/js/index.js"></script>
+  <script defer src="./assets/js/index.js"></script>
 </head>
 <body>
   <article class="user-card">
@@ -17,35 +17,30 @@
     </div>
 
     <div class="user-info">
-      <h2 class="user-card-name">Robin Summeretto</h2>
-      <p class="user-card-nickname">@Robin</p>
+      <h2 id="user-name" class="user-card-name">name</h2>
+      <p id="user-nickname" class="user-card-nickname">nickname</p>
     </div>
 
     <nav>
       <ul class="nav-links">
-        <li><a class="nav-link" href="#" >Profile</a></li>
-        <li><a class="nav-link" href="#" >Publications</a></li>
-        <li><a class="nav-link" href="#" >Projects</a></li>
+        <li><a data-target="profile" id="user-profile" class="nav-link" href="#" >Profile</a></li>
+        <li><a data-target="publications" id="user-publications" class="nav-link" href="#" >Publications</a></li>
+        <li><a data-target="projects" id="user-projects" class="nav-link" href="#" >Projects</a></li>
       </ul>
     </nav>
 
-    <div>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, tempore!</p>
+    <div class="main-card-content">
+      <div id="profile" class="user-main-info">
+        <p id="user-bio">bio</p>
+        <p id="user-date">date</p>
+        <p id="user-profession">profession</p>
+      </div>
       
-      <ul>
-        <li>Date of birth: 28.08.2000</li>
-        <li>Profession: Artist</li>
-      </ul>
-    </div>
-    
-    <div>
-      <img src="" alt="">
-      <img src="" alt="">
-      <img src="" alt="">
-    </div>
-    
-    <div>
-      <p>Coming soon...</p>
+      <div id="publications" class="user-publications-content"></div>
+      
+      <div id="projects">
+        <p>Coming soon...</p>
+      </div>
     </div>
   </article>
 </body>

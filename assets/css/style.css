@@ -6,6 +6,10 @@
   --main-dark-color: rgb(80, 80, 80);
 }
 
+body {
+  font-family: sans-serif;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -16,10 +20,12 @@ a {
   flex-direction: column;
   max-width: 800px;
   min-width: 250px;
+  min-height: 700px;
   margin: 3em auto;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.4);
+  background-color: var(--accent-light-color);
 }
 
 .user-card-background {
@@ -35,6 +41,11 @@ a {
   max-width: 12rem;
   margin-top: -6rem;
   margin-left: 3rem;
+}
+
+.user-avatar:hover {
+  filter: grayscale(30%);
+  cursor: pointer;
 }
 
 .user-info {
@@ -62,19 +73,62 @@ a {
   flex-direction: row;
   justify-content: space-around;
   gap: 1rem;
-  border-bottom: 2px solid var(--main-dark-color);
+  border-bottom: 4px solid var(--main-dark-color);
   font-size: 1.3rem;
   padding: 1rem 0 1rem;
   text-transform: uppercase;
 }
 
 .nav-link {
+  display: inline-block;
   cursor: pointer;
   padding: 0.5rem 1.5rem;
+  transition: transform 0.2s ease-out, border-color 0.2s ease-out;
+  border: 2px solid transparent;
 }
 
 .nav-link:hover {
   border-bottom: 2px solid var(--main-dark-color);
+  transform: scale(1.1);
+}
+
+.nav-link:active {
+  border: 2px solid var(--main-dark-color);
+  border-radius: 5px;
+  transform: scale(0.99);
+}
+
+.main-card-content {
+  margin: 1rem;
+}
+
+.user-publications-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 20em);
+  gap: 3rem;
+  justify-content: center;
+}
+
+.publication-img {
+  margin: 0.5rem 0;
+  width: 20em;
+  height: 20em;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid var(--main-dark-color);
+  transition: transform 0.1s ease-out;
+}
+
+.publication-img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.user-main-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-size: 1.2rem;
 }
 
 @media (max-width: 500px) {
@@ -84,7 +138,7 @@ a {
 
   .user-avatar {
     max-width: 10rem;
-    margin-top: -6rem; 
+    margin-top: -6rem;
     margin-left: auto;
     margin-right: auto;
     display: block;
@@ -98,7 +152,23 @@ a {
   }
 
   .nav-links {
-    flex-direction: column;
+    display: flex;
     text-align: center;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .nav-link {
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    border: 2px solid var(--main-dark-color);
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 0.2rem;
+  }
+
+  .nav-link:hover {
+    border-bottom: 2px solid var(--main-dark-color);
   }
 }
