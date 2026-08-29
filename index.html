@@ -9,18 +9,23 @@
   <script src="./assets/js/index.js"></script>
 </head>
 <body>
-  <article>
-    <img src="./assets/img/avatar.jpg" alt="user avatar">
+  <article class="user-card">
+    <img class="user-card-background" src="./assets/img/background.jpg" alt="user background profile">
+    
+    <div class="user-card-avatar">
+      <img class="user-avatar" src="./assets/img/avatar.jpg" alt="user avatar">
+    </div>
 
-    <h2>Robin Summeretto</h2>
-
-    <p>@Robin</p>
+    <div class="user-info">
+      <h2 class="user-card-name">Robin Summeretto</h2>
+      <p class="user-card-nickname">@Robin</p>
+    </div>
 
     <nav>
-      <ul>
-        <li>Profile</li>
-        <li>Publications</li>
-        <li>Projects</li>
+      <ul class="nav-links">
+        <li><a class="nav-link" href="#" >Profile</a></li>
+        <li><a class="nav-link" href="#" >Publications</a></li>
+        <li><a class="nav-link" href="#" >Projects</a></li>
       </ul>
     </nav>
 
@@ -28,8 +33,8 @@
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, tempore!</p>
       
       <ul>
-        <li>Date of birth: </li>
-        <li>Profession: </li>
+        <li>Date of birth: 28.08.2000</li>
+        <li>Profession: Artist</li>
       </ul>
     </div>
     
