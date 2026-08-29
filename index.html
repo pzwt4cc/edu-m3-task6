@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,11 @@
   <link rel="stylesheet" href="./assets/css/style.css">
   <script defer src="./assets/js/index.js"></script>
 </head>
+
 <body>
   <article class="user-card">
     <img class="user-card-background" src="./assets/img/background.jpg" alt="user background profile">
-    
+
     <div class="user-card-avatar">
       <img class="user-avatar" src="./assets/img/avatar.jpg" alt="user avatar">
     </div>
@@ -30,9 +32,9 @@
 
     <nav>
       <ul class="nav-links">
-        <li><a data-target="profile" id="user-profile" class="nav-link" href="#" >Profile</a></li>
-        <li><a data-target="publications" id="user-publications" class="nav-link" href="#" >Publications</a></li>
-        <li><a data-target="projects" id="user-projects" class="nav-link" href="#" >Projects</a></li>
+        <li><a data-target="profile" id="user-profile" class="nav-link" href="#">Profile</a></li>
+        <li><a data-target="publications" id="user-publications" class="nav-link" href="#">Publications</a></li>
+        <li><a data-target="projects" id="user-projects" class="nav-link" href="#">Projects</a></li>
       </ul>
     </nav>
 
@@ -41,15 +43,24 @@
         <p id="user-bio">bio</p>
         <p id="user-date">date</p>
         <p id="user-profession">profession</p>
-        <p id="user-phone" class="user-phone" data-phone="+380971234567">+380971234567</p>
+
+        <div class="contacts">
+          <button id="toggle-contacts-btn" class="action-btn">Show contacts</button>
+
+          <div id="contacts-info" class="contacts-info hidden">
+            <p><strong>Email:</strong> robin.summer@hsr.com</p>
+            <p><strong>Phone:</strong> <span id="user-phone" data-phone="+380971234567">+380971234567</span></p>
+          </div>
+        </div>
       </div>
-      
+
       <div id="publications" class="user-publications-content"></div>
-      
-      <div id="projects">
+
+      <div id="projects" class="user-projects">
         <p>Coming soon...</p>
       </div>
     </div>
   </article>
 </body>
+
 </html>

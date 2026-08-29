@@ -41,6 +41,8 @@ function switchLinks(e) {
   const targetId = e.target.dataset.target;
   const tabs = document.getElementById(targetId);
   tabs.style.display = '';
+
+  console.log(`User clicked on tab: ${targetId}`);
 }
 
 userSwitchLinks.forEach((link) => {
@@ -105,3 +107,18 @@ const age = new Date().getFullYear() - birthYear;
 
 userDate.textContent = `Date of birth: ${userProfile.birthDate}`;
 userDate.title = `Age: ${age}`;
+
+const toggleContactsBtn = document.getElementById('toggle-contacts-btn');
+const contactsInfo = document.getElementById('contacts-info');
+
+function toggleContacts() {
+  contactsInfo.classList.toggle('hidden');
+
+  if (contactsInfo.classList.contains('hidden')) {
+    toggleContactsBtn.textContent = 'Show contacts';
+  } else {
+    toggleContactsBtn.textContent = 'Hide contacts';
+  }
+}
+
+toggleContactsBtn.addEventListener('click', toggleContacts);
