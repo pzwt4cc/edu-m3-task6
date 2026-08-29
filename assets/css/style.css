@@ -153,6 +153,10 @@ a {
   margin: 1rem;
 }
 
+.user-phone {
+  cursor: pointer;
+}
+
 .user-publications-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, 20em);

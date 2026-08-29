@@ -39,7 +39,6 @@ function switchLinks(e) {
   document.querySelectorAll('.main-card-content > div').forEach((div) => {
     div.style.display = 'none';
   });
-
   const targetId = e.target.dataset.target;
   const tabs = document.getElementById(targetId);
   tabs.style.display = '';
@@ -54,9 +53,7 @@ userPublications.forEach((item) => {
   img.classList.add('publication-img');
   img.src = item.src;
   img.alt = item.alt;
-
   const publicationsTarget = document.getElementById('publications');
-
   publicationsTarget.append(img);
 });
 
@@ -81,3 +78,25 @@ function toggleLike() {
 }
 
 likeBtn.addEventListener('click', toggleLike);
+
+const userPhone = document.getElementById('user-phone');
+
+function getOperator(number) {
+  const code = number.slice(3, 6);
+
+  if (['067', '096', '097', '098'].includes(code)) {
+    return 'Kyivstar';
+  } else {
+    return 'Unknown Operator';
+  }
+}
+
+userPhone.addEventListener('mouseenter', () => {
+  const originalNumber = userPhone.dataset.phone;
+  const operator = getOperator(originalNumber);
+  userPhone.textContent = `${operator}: ${originalNumber}`;
+});
+
+userPhone.addEventListener('mouseleave', () => {
+  userPhone.textContent = userPhone.dataset.phone;
+});
