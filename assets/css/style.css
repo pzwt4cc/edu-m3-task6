@@ -4,10 +4,14 @@
 
 :root {
   --main-dark-color: rgb(80, 80, 80);
+  --accent-card-color: rgba(27, 27, 27, 0.894);
+  --main-light-color: white;
+  --main-follow-btn-color: crimson;
 }
 
 body {
   font-family: sans-serif;
+  color: var(--main-light-color);
 }
 
 a {
@@ -25,7 +29,7 @@ a {
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.4);
-  background-color: var(--accent-light-color);
+  background-color: var(--accent-card-color);
 }
 
 .user-card-background {
@@ -50,6 +54,51 @@ a {
 
 .user-info {
   position: relative;
+}
+
+.user-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 3.5rem;
+}
+
+.action-btn {
+  font-size: 1.2rem;
+  padding: 0.5rem 1.5rem;
+  min-width: 160px;
+  text-align: center;
+  border: 2px solid var(--main-follow-btn-color);
+  border-radius: 8px;
+  background-color: var(--main-follow-btn-color);
+  color: var(--main-light-color);
+  font-weight: bold;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.1s ease;
+}
+
+.action-btn.subscribed {
+  background-color: var(--main-dark-color);
+  color: var(--main-light-color);
+  border-color: var(--main-dark-color);
+}
+
+.like-btn {
+  font-size: 1.5rem;
+  filter: grayscale(100%);
+  transition:
+    filter 0.2s ease,
+    transform 0.1s ease;
+  cursor: pointer;
+  border-radius: 8px;
+  background-color: var(--main-dark-color);
+  border: none;
+}
+
+.like-btn.active {
+  filter: grayscale(0%);
 }
 
 .user-card-name,
@@ -83,7 +132,9 @@ a {
   display: inline-block;
   cursor: pointer;
   padding: 0.5rem 1.5rem;
-  transition: transform 0.2s ease-out, border-color 0.2s ease-out;
+  transition:
+    transform 0.2s ease-out,
+    border-color 0.2s ease-out;
   border: 2px solid transparent;
 }
 
@@ -163,7 +214,7 @@ a {
     width: 50%;
     text-align: center;
     border: 2px solid var(--main-dark-color);
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     padding: 0.2rem;
   }

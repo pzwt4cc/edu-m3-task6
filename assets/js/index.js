@@ -59,3 +59,25 @@ userPublications.forEach((item) => {
 
   publicationsTarget.append(img);
 });
+
+const subscribeBtn = document.getElementById('follow-btn');
+
+function subscribeBtnText() {
+  if (subscribeBtn.textContent === 'Subscribe') {
+    subscribeBtn.textContent = 'Subscribed';
+    subscribeBtn.classList.add('subscribed');
+  } else {
+    subscribeBtn.textContent = 'Subscribe';
+    subscribeBtn.classList.remove('subscribed');
+  }
+}
+
+subscribeBtn.addEventListener('click', subscribeBtnText);
+
+const likeBtn = document.getElementById('like-btn');
+
+function toggleLike() {
+  likeBtn.classList.toggle('active');
+}
+
+likeBtn.addEventListener('click', toggleLike);
